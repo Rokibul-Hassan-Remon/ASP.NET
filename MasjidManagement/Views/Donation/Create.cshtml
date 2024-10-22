@@ -1,0 +1,101 @@
+﻿@model Donation
+@{
+    ViewData["Title"] = "Create";
+}
+
+<html>
+<body>
+    <h1>Create</h1>
+    <hr>
+
+    
+<form asp-action="Create" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col-md-2">
+
+                <div class="form-group">
+                    <label  asp-for="DonorId"  class="control-label"> Id</label>
+                    <input type="text" asp-for="DonorId" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DonorName" class="control-label">Name</label>
+                    <input type="text" asp-for="DonorName" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" asp-for="DonorBirth">Date of Birth</label>
+                    <input type="date" class="form-control" asp-for="DonorBirth" />
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            
+            <input type="radio"  asp-for="DonorGender" value="Male" />
+            <label asp-for="DonorGender" class="control-label">Male</label>
+
+            <input type="radio" asp-for="DonorGender" value="Female" />
+            <label asp-for="DonorGender" class="control-label">Female</label>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+
+                <div class="form-group">
+                    <label asp-for="Amount" class="control-label">Amount</label>
+                    <input type="number" asp-for="Amount" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DonationDate" class="contorl-label">Date </label>
+                    <input type="date" asp-for="DonationDate" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" asp-for="IsSubscribe" value="Yes" />
+                    <label asp-for="IsSubscribe" class="control-label">Last Month Donation</label>
+                </div>
+
+            </div>
+        </div>
+    <div class="row">
+       <div class="col-md-2">
+            <div class="form-group">
+                <label asp-for="DonorCountry" class="control-label">Country</label>
+                <select asp-for="DonorCountry" class="form-control">
+                    <option value="">Select a Country</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                </select>
+        </div>
+        <div>
+                    <input type="file"  class="form-control" asp-for="Uploaded_File" />
+                    <label class="control-label" asp-for="Uploaded_File">Upload a File</label>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" asp-for="DonorAge">Age</label>
+            <input type="number" class="form-control" asp-for="DonorAge" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" asp-for="DonorFavColor"></label>
+            <input type="color" class="form-control" asp-for="DonorFavColor" />
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="ADD" class="btn-primary" />
+        </div>
+    </div>
+   </div>
+
+
+        
+ </form>
+</body>
+</html>

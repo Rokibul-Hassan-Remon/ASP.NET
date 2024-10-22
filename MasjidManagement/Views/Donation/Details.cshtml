@@ -1,0 +1,43 @@
+﻿@model MasjidManagement.Models.Donation
+
+@{
+	ViewData["title"] = "Donation";
+}
+
+<h1>@Model.DonorName</h1>
+<hr />
+
+<dl class="row">
+
+	<dt class="col-sm-2">DonorId :</dt>
+	<dd class="col-sm-10">@Model.Id</dd>
+
+	<dt class="col-sm-2">Country :</dt>
+	<dd class="col-sm-10">@Model.DonorCountry</dd>
+
+	<dt class="col-sm-2">Date of Birth :</dt>
+	<dd class="col-sm-10">@Model.DonorBirth</dd>
+
+	<dt class="col-sm-2">Age :</dt>
+	<dd class="col-sm-10">@Model.DonorAge</dd>
+
+	<dt class="col-sm-2">Gender :</dt>
+	<dd class="col-sm-10">@Model.DonorGender</dd>
+
+	<dt class="col-sm-02">Amount :</dt>
+	<dd class="col-sm-10">@Model.Amount</dd>
+
+	<dt class="col-sm-02">Donation Date :</dt>
+	<dd class="col-sm-10">@Model.DonationDate</dd>
+
+
+	<dt class="col-sm-2">Favourite Color :</dt>
+	<dd class="col-sm-20">@Model.DonorFavColor</dd>
+
+
+</dl>
+
+
+<a class="btn btn-primary" asp-action="Index">back to List</a>
+<a class="btn btn-primary" asp-action="Update" asp-route-id="@Model.Id">Edit</a>
+<a class="btn btn-danger"  asp-action="Delete" asp-route-id="@Model.Id">Delete</a>

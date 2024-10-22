@@ -1,0 +1,114 @@
+﻿@model MasjidManagement.Models.Donation
+
+@{
+	ViewData["title"] = "UpdateDon";
+}
+
+<h2>@Model.DonorName</h2>
+
+<hr />
+
+
+<form asp-action="Update" >
+	<div class="row">
+		<div class="col-md-4">
+			<input type="hidden" asp-for="Id" />
+
+			<!--TextBox(Donor Id)-->
+			<div class="form-group">
+				<label asp-for="DonorId" class="label-control">ID</label>
+				<input type="text" asp-for="DonorId" class="form-control" />
+			</div>
+
+			<!--TextBox(Name)-->
+			<div class="form-group">
+				<label asp-for="DonorName" class="label-control" >Name</label>
+				<input asp-for="DonorName" class="form-control" />
+			</div>
+		</div>
+	</div>
+
+			<!--Radio(Gender) -->
+			<div class="form-group">
+				
+				<input type="radio" asp-for="DonorGender"  value="Male"/>
+				<label class="control-label" asp-for="DonorGender">Male</label>
+
+				<input  type="radio"  asp-for="DonorGender" value="Female" />
+				<label class="control-label" asp-for="DonorGender">Female</label>
+			</div>
+
+	<div class="row">
+		<div class="col-md-4">
+
+			<!--Number (Age) -->
+			<div class="form-group">
+				<label class="control-label" asp-for="DonorAge" >Age</label>
+				<input type="number" class="form-control" asp-for="DonorAge" />
+
+			</div>
+
+
+			<!--Date(Donation Date)-->
+			<div class="form-group">
+				<label class="control-label" asp-for="DonationDate">Age</label>
+				<input type="date" class="form-control" asp-for="DonationDate" />
+			</div>
+
+
+			<!--number(Amount)-->
+			<div class="form-group">
+				<label asp-for="Amount" class="label-control" >Donation</label>
+				<input type="number" asp-for="Amount" class="form-control" />
+			</div>
+
+			<!-- File input(Uploaded_File) ->
+			<div>
+				<label asp-for="Uploaded_File" class="control-label">Upload a File</label>
+				<input type="file" asp-for="Uploaded_File" class="form-control" />
+				<br />
+				@if (!String.IsNullOrEmpty(Model.FileName))
+				{
+					<p>
+						Current File:
+						<a asp-action="DownloadFile" asp-route-id="@Model.Id">@Model.FileName</a>
+					</p>
+				}
+			</div>
+
+			<!--drop down list -->
+			<div class="form-group">
+				<label asp-for="DonorCountry" class="label-control" >Country </label>
+				<select class="form-control" >
+					<option value="">Select a Country</option>
+					<option value="USA">USA</option>
+					<option value="BD">Bangladesh</option>
+					<option  vlaue="Canada">Canada</option>
+				</select>
+			</div>
+			<br />
+			<hr />
+
+			<!--Color(Favourite Color)-->
+			<div class="form-group">
+				<label class="control-label" asp-for="DonorFavColor"> Favourite Color </label>
+				<input type="color" class="col-md-2"  asp-for="DonorFavColor" />
+			</div>
+
+
+			<!--submit(Total Edit)-->
+			<div class="form-group ">
+				<input type="submit" value="save" class=" btn-primary" />
+			</div>
+
+		</div>
+	</div>
+
+</form>
+	
+
+
+
+<div>
+	<a asp-action="Index">Back To List</a>
+</div>

@@ -1,0 +1,42 @@
+﻿@model MasjidManagement.Models.Imam
+
+@{
+	ViewData["title"] = "Imam";
+}
+
+<h1>Imam</h1>
+<hr/>
+
+<dl class="row">
+	<dt class="col-sm-2">
+		Imam Id :
+	</dt>
+	<dd class="col-sm-10">
+		@Model.Id
+	</dd>
+
+	<dt class="col-sm-2">
+		Imam Name :
+	</dt>
+	<dd class="col-sm-10">
+		@Model.ImamName
+	</dd>
+
+	<dt class="col-sm-2">
+		Qualification :
+	</dt>
+	<dd class="col-sm-10">
+		@Model.Qualification
+	</dd>
+	<dt class="col-sm-2">
+		HireDate :
+	</dt>
+	<dd class="col-sm-10">
+		@Model.HireDate
+	</dd>
+</dl>
+
+
+<a class="btn btn-primary" asp-action="Index">back to List</a>
+<a class="btn btn-primary" asp-action="Update" asp-route-id="@Model.Id">Edit</a>
+<a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>

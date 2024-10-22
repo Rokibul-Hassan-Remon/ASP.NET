@@ -1,0 +1,43 @@
+﻿@model List<MasjidManagement.Models.Donation>
+
+@{
+	ViewData["Title"] = "Donor List";
+}
+
+<h1>
+	Donor List
+</h1>
+
+<div class="container mt-4">
+	<a class="btn btn-primary" asp-action="Create" role="button">Create Donation</a>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Donor Name</th>
+			<th>Amount</th>
+			<th>Donation Date</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@for(var i = 0 ; i<Model.Count(); i++)
+		{
+		
+			<tr>
+				<td>@Model[i].DonorName</td>
+				<td>@Model[i].Amount</td>
+				<td>@Model[i].DonationDate</td>
+
+				<td>
+					<a class="btn btn-primary" asp-action="Update" asp-route-id="@Model[i].Id">Edit</a>
+					<a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model[i].Id">Delete</a>
+					<a class="btn btn-primary" asp-action="Details" asp-route-id="@Model[i].Id">Details</a>
+				</td>
+
+			</tr>
+		}
+	</tbody>
+
+</table>

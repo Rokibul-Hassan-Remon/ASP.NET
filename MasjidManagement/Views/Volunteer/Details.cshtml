@@ -1,0 +1,43 @@
+﻿@model MasjidManagement.Models.Volunteer
+
+@{
+	ViewData["title"] = "Volunteer";
+}
+
+<h1>Volunteer</h1>
+<hr />
+
+<dl class="row">
+	<dt class="col-sm-2">
+		Volunteer Id :
+	</dt>
+	<dd class="col-sm-10">
+		@Model.VId
+	</dd>
+
+	<dt class="col-sm-2">
+		Volunteer Name :
+	</dt>
+	<dd class="col-sm-10">
+		@Model.VName
+	</dd>
+
+	<dt class="col-sm-2">
+		VRole :
+	</dt>
+	<dd class="col-sm-10">
+		@Model.VRole
+	</dd>
+
+	<dt class="col-sm-2">
+		VContactNumber :
+	</dt>
+	<dd class="col-sm-10">
+		@Model.VContactNumber
+	</dd>
+</dl>
+
+
+<a class="btn btn-primary" asp-action="Index">back to List</a>
+<a class="btn btn-primary" asp-action="Update" asp-route-id="@Model.Id">Edit</a>
+<a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
